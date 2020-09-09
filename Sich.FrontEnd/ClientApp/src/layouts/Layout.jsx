@@ -10,7 +10,7 @@ export const Layout = ({name}) => {
     <div>
       <NavMenu />
         <Container>
-        {name}
+          {name}
         </Container>
     </div>
   )
