@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router';
-import { Layout } from './components/Layout';
-import { FetchData } from './components/FetchData';
-import { Counter } from './components/Counter';
+import { Layout } from './layouts/Layout.jsx';
 
-import './custom.css'
-import Home from './components/Home';
+import './assets/css/custom.css'
+import Home from './components/pages/Home/Home';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -14,8 +12,6 @@ export default class App extends Component {
     return (
       <Layout>
         <Route exact path='/' component={Home} />
-        <Route path='/counter' component={Counter} />
-        <Route path='/fetch-data' component={FetchData} />
       </Layout>
     );
   }
