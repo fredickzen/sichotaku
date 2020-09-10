@@ -32,7 +32,10 @@
   },
   "scripts": {
     "start": "rimraf ./build && react-scripts start",
-    "build": "react-scripts build",
+    "start-prod": "rimraf ./build && cross-env REACT_APP_SUBENVIRONMENT=production react-scripts start",
+    "start-qa": "rimraf ./build && cross-env REACT_APP_SUBENVIRONMENT=qa react-scripts start",
+    "build": "react-scripts cross-env REACT_APP_ENVIRONMENT=production build",
+    "build-qa": "react-scripts cross-env REACT_APP_ENVIRONMENT=qa build",
     "test": "cross-env CI=true react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "eslint ./src/"
