@@ -1,35 +1,33 @@
-import React from 'react'
-import {
-    BrowserRouter as Router,
-    Switch,
-  } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
 // import { PrivateRoute } from './PrivateRoute';
-import { PublicRoute } from './PublicRoute';
-import { AppPublic } from './AppPublic';
-import NavMenu from '../layouts/partial/NavMenu';
+import { PublicRoute } from "./PublicRoute";
+import { AppPublic } from "./AppPublic";
+import PublicNavMenu from "../layouts/public/PublicNavMenu";
 
 // npm install rimraf --save-dev
 
 export const AppRouter = () => {
-    return (
-        <Router>
-        <div>
-        <NavMenu></NavMenu>
-        
-          <Switch>
-            <PublicRoute
-             exact path="" 
-             component={AppPublic} 
-             isAutenticated={false}
-            ></PublicRoute>
+  const isAutenticated = false;
 
-            {/* <PrivateRoute
+  return (
+    <Router>
+      <Switch>
+        {isAutenticated ? null : <PublicNavMenu />}
+
+        <PublicRoute
+          exact
+          path=""
+          component={AppPublic}
+          isAutenticated={isAutenticated}
+        ></PublicRoute>
+
+        {/* <PrivateRoute
             exact path="/login" 
             component={} 
             isAutenticated={true}
             ></PrivateRoute> */}
-          </Switch>
-        </div>
-      </Router>
-    )
-}
+      </Switch>
+    </Router>
+  );
+};

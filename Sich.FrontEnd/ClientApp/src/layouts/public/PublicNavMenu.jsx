@@ -1,15 +1,13 @@
-import React from 'react';
-import { Layout, Menu } from 'antd';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Layout, Menu } from "antd";
+import { Link } from "react-router-dom";
 
 const { Header } = Layout;
-const NavMenu = () => {
-
+const PublicNavMenu = () => {
   return (
     <Header>
       <div className="logo" />
-
-      <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
+      <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["1"]}>
         <Menu.Item key="1">
           <Link to="/home">Home</Link>
         </Menu.Item>
@@ -18,9 +16,8 @@ const NavMenu = () => {
         </Menu.Item>
         <Menu.Item key="3">nav 3</Menu.Item>
       </Menu>
-
     </Header>
   );
-}
+};
 
-export default NavMenu;
+export default PublicNavMenu;
