@@ -13,7 +13,7 @@ export const AppRouter = () => {
   return (
     <Router>
       <Switch>
-        {isAutenticated ? null : <PublicNavMenu />}
+        {isAutenticated ? "" : <PublicNavMenu />}
         <PublicRoute
           exact
           path=""
