@@ -14,7 +14,7 @@ export const AppRouter = () => {
     <Router>
       <Switch>
         {isAutenticated ? null : <PublicNavMenu />}
-
+xd
         <PublicRoute
           exact
           path=""
